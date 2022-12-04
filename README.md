@@ -1,2 +1,2 @@
 # Development-Board-C-INS
-RoboMaster Development Board C BMI088
+RoboMaster Development Board C
