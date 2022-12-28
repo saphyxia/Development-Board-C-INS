@@ -263,13 +263,13 @@ typedef struct
 	int16_t gy;
 	int16_t gz;
 	
-	int32_t ax_offset;
-	int32_t ay_offset;
-	int32_t az_offset;
+	float ax_offset;
+	float ay_offset;
+	float az_offset;
 
-	int32_t gx_offset;
-	int32_t gy_offset;
-	int32_t gz_offset;
+	float gx_offset;
+	float gy_offset;
+	float gz_offset;
 } mpu_data_t;
 
 enum

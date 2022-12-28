@@ -51,8 +51,9 @@ develop_bord_c_ins/startinstask.o: ..\USER\Tasks\Src\StartINSTask.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\USER\Device\Inc\ist8310.h ..\Core\Inc\tim.h ..\Core\Inc\main.h \
-  ..\USER\Algorithm\Inc\pid.h ..\USER\Algorithm\Inc\kalman.h \
+  ..\USER\Algorithm\Inc\pid.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  ..\USER\Algorithm\Inc\kalman.h \
   ..\Middlewares\ST\ARM\DSP\Inc\arm_math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\USER\AHRS\Inc\AHRS_MiddleWare.h ..\USER\AHRS\Inc\AHRS.h

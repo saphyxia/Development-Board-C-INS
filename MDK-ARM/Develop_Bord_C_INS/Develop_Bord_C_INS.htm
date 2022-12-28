@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Develop_Bord_C_INS\Develop_Bord_C_INS.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Develop_Bord_C_INS\Develop_Bord_C_INS.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Dec  6 20:07:11 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Dec 28 21:32:34 2022
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -670,7 +670,7 @@ Global Symbols
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;angle_to_quat
 </UL>
 
-<P><STRONG><a name="[85]"></a>BMI088_init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, bmi088.o(.text.BMI088_init))
+<P><STRONG><a name="[85]"></a>BMI088_init</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, bmi088.o(.text.BMI088_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = BMI088_init &rArr; bmi088_gyro_init &rArr; SPI_ReadWriteByte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
@@ -680,7 +680,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartINSTask
 </UL>
 
-<P><STRONG><a name="[89]"></a>BMI088_read</STRONG> (Thumb, 470 bytes, Stack size 40 bytes, bmi088.o(.text.BMI088_read))
+<P><STRONG><a name="[89]"></a>BMI088_read</STRONG> (Thumb, 506 bytes, Stack size 40 bytes, bmi088.o(.text.BMI088_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = BMI088_read &rArr; BMI088_read_muli_reg &rArr; SPI_ReadWriteByte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ReadWriteByte

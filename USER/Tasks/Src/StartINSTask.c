@@ -25,59 +25,6 @@
     {0.0f, 1.0f, 0.0f},                     \
     {0.0f, 0.0f, 1.0f}                      \
 
-
-typedef struct
-{
-    float Xk_accelX;
-    float pk_accelX;
-    float Q_accelX;
-    float R_accelX;
-    float Kk_accelX;
-
-    float Xk_accelY;
-    float Pk_accelY;
-    float R_accelY;
-    float Q_accelY;
-    float Kk_accelY;
-
-    float Xk_accelZ;
-    float Pk_accelZ;
-    float Q_accelZ;
-    float R_accelZ;
-    float Kk_accelZ;		
-
-    float Xk_magX;
-    float Pk_magX;
-    float Q_magX;
-    float R_magX;
-    float Kk_magX;
-
-    float Xk_magY;
-    float Pk_magY;
-    float Q_magY;
-    float R_magY;
-    float Kk_magY;
-
-    float Xk_magZ;
-    float Pk_magZ;
-    float Q_magZ;
-    float R_magZ;
-    float Kk_magZ;
-}kalman_t;
-
-typedef struct __BMI088_REAL_Data__
-{
-    float Accel_X;  //转换成实际的X轴加速度，
-    float Accel_Y;  //转换成实际的Y轴加速度，
-    float Accel_Z;  //转换成实际的Z轴加速度，
-    float Temp;     //转换成实际的温度，单位为摄氏度
-    float Gyro_X;   //转换成实际的X轴角加速度，
-    float Gyro_Y;   //转换成实际的Y轴角加速度，
-    float Gyro_Z;   //转换成实际的Z轴角加速度
-    float GyroRawData_Z;
-    float GyroRawData_Y;
-}BMI088_REAL_DATA_t;
-
 static PID_Delta_t imu_temp_pid;
 
 static uint8_t first_temperate;

@@ -1,6 +1,8 @@
 develop_bord_c_ins/pid.o: ..\USER\Algorithm\Src\pid.c \
   ..\USER\Algorithm\Inc\pid.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \

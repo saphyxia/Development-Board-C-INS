@@ -5,22 +5,20 @@
 
 
 /**************************PID param Init*********************************/
-static void f_PID_param_init(
+static void PID_param_init(
     PID_TypeDef_t *pid,
-    float deadband,
-    float maxIntegral,
-    float max_out,
-    float kp,
-    float Ki,
-    float Kd)
+    float *para)
 {
-    pid->param.Deadband = deadband;
-    pid->param.maxIntegral = maxIntegral;
-    pid->param.MaxOut = max_out;
+	
+		pid->PID_clear(pid);
+	
+    pid->param.Deadband = para[0];
+    pid->param.maxIntegral = para[1];
+    pid->param.MaxOut = para[2];
 
-    pid->param.kp = kp;
-    pid->param.Ki = Ki;
-    pid->param.Kd = Kd;
+    pid->param.kp = para[3];
+    pid->param.Ki = para[4];
+    pid->param.Kd = para[5];
 
     pid->ERRORHandler.ERRORCount = 0;
     pid->ERRORHandler.ERRORType = PID_ERROR_NONE;
@@ -30,57 +28,75 @@ static void f_PID_param_init(
 		pid->Dout = 0;
     pid->Output = 0;
 }
-/**************************PID param reset*********************************/
-static void f_PID_reset(PID_TypeDef_t *pid, float Kp, float Ki, float Kd)
-{
-    pid->param.kp = Kp;
-    pid->param.Ki = Ki;
-    pid->param.Kd = Kd;
 
-    if (pid->param.Ki == 0)
-        pid->Iout = 0;
+/**************************PID clear*********************************/
+static void PID_clear(PID_TypeDef_t *pid)
+{
+	pid->Err = 0;
+	pid->Last_Err = 0;
+	pid->Integral = 0;
+		
+	pid->Pout = 0;
+	pid->Iout = 0;
+	pid->Dout = 0;
+	pid->Output = 0;
+}
+
+static void f_PID_ErrorHandle(PID_TypeDef_t *pid)
+{
+		/*Output NAN Handle*/
+		if(isnan(pid->Output) == true)
+		{
+				pid->ERRORHandler.ERRORType = Output_NAN;
+		}
 }
 
 /***************************PID calculate**********************************/
-float f_PID_Calculate(PID_TypeDef_t *pid, float err)
+float f_PID_Calculate(PID_TypeDef_t *pid, float Target,float Measure)
 {
     if (pid == NULL)
     {
 				return 0; 
     }
-
+		
+		f_PID_ErrorHandle(pid);
+		if(pid->ERRORHandler.ERRORType != PID_ERROR_NONE)
+		{
+			pid->PID_clear(pid);
+			return 0;
+		}
+		
+		pid->Target = Target;
+		pid->Measure = Measure;
+		
 		pid->Last_Err = pid->Err;
 		
-		if(ABS(err) < pid->param.Deadband) err = 0;
-    pid->Err = err;
+    pid->Err = pid->Target-pid->Measure;
 		
+		if(ABS(pid->Err) > pid->param.Deadband)
+		{
+			pid->Integral += pid->Err;
+			VAL_Limit(pid->Integral,-pid->param.maxIntegral,pid->param.maxIntegral);
+			
+			pid->Pout = pid->param.kp * pid->Err;
+			pid->Iout = pid->param.Ki * pid->Integral;
+			pid->Dout = pid->param.Kd * (pid->Err - pid->Last_Err);
+			
+			pid->Output = pid->Pout + pid->Iout + pid->Dout;
+			VAL_Limit(pid->Output,-pid->param.MaxOut,pid->param.MaxOut);
+		}
 		
-		pid->Integral += pid->Err;
-		VAL_Limit(pid->Integral,-pid->param.maxIntegral,pid->param.maxIntegral);
-		
-		pid->Pout = pid->param.kp * pid->Err;
-		pid->Iout = pid->param.Ki * pid->Integral;
-		pid->Dout = pid->param.Kd * (pid->Err - pid->Last_Err);
-		
-		pid->Output = pid->Pout + pid->Iout + pid->Dout;
-		VAL_Limit(pid->Output,-pid->param.MaxOut,pid->param.MaxOut);
-
     return pid->Output;
 }
 
+
 void PID_Init(
     PID_TypeDef_t *pid,
-    float deadband,
-    float maxIntegral,
-    float max_out,
-    float kp,
-    float Ki,
-    float Kd)
+    float *para)
 {
-    pid->PID_reset = f_PID_reset;
-    pid->PID_param_init = f_PID_param_init;
-    pid->PID_param_init(pid, deadband,maxIntegral, max_out, 
-                        kp, Ki, Kd);
+		pid->PID_clear = PID_clear;
+    pid->PID_param_init = PID_param_init;
+    pid->PID_param_init(pid, para);
 }
 
 float f_PID_Delta_Calc(struct _PID_Delta *pid,float err)
