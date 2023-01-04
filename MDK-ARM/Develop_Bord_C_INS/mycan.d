@@ -1,5 +1,5 @@
-develop_bord_c_ins/mycan.o: ..\USER\Bsp\Src\mycan.c \
-  ..\USER\Bsp\Inc\mycan.h ..\Core\Inc\can.h ..\Core\Inc\main.h \
+develop_bord_c_ins/mycan.o: ..\USER\Protocol\Src\mycan.c \
+  ..\USER\Protocol\Inc\mycan.h ..\Core\Inc\can.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \

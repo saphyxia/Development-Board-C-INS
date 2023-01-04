@@ -54,7 +54,7 @@ osThreadId myINSTaskHandle;
 
 /* USER CODE END FunctionPrototypes */
 
-void StartINSTask(void const * argument);
+void INSTask(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -102,7 +102,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of myINSTask */
-  osThreadDef(myINSTask, StartINSTask, osPriorityRealtime, 0, 256);
+  osThreadDef(myINSTask, INSTask, osPriorityRealtime, 0, 256);
   myINSTaskHandle = osThreadCreate(osThread(myINSTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -111,22 +111,22 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartINSTask */
+/* USER CODE BEGIN Header_INSTask */
 /**
   * @brief  Function implementing the myINSTask thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartINSTask */
-__weak void StartINSTask(void const * argument)
+/* USER CODE END Header_INSTask */
+__weak void INSTask(void const * argument)
 {
-  /* USER CODE BEGIN StartINSTask */
+  /* USER CODE BEGIN INSTask */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartINSTask */
+  /* USER CODE END INSTask */
 }
 
 /* Private application code --------------------------------------------------*/

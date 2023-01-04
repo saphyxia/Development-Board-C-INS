@@ -1,5 +1,5 @@
-develop_bord_c_ins/myspi.o: ..\USER\Bsp\Src\myspi.c \
-  ..\USER\Bsp\Inc\myspi.h ..\Core\Inc\spi.h ..\Core\Inc\main.h \
+develop_bord_c_ins/myspi.o: ..\USER\Protocol\Src\myspi.c \
+  ..\USER\Protocol\Inc\myspi.h ..\Core\Inc\spi.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \

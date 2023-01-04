@@ -36,4 +36,4 @@ develop_bord_c_ins/motor.o: ..\USER\Device\Src\motor.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\USER\Bsp\Inc\mycan.h ..\Core\Inc\can.h ..\Core\Inc\main.h
+  ..\USER\Protocol\Inc\mycan.h ..\Core\Inc\can.h ..\Core\Inc\main.h

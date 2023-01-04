@@ -34,5 +34,5 @@ develop_bord_c_ins/ist8310.o: ..\USER\Device\Src\ist8310.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\USER\Bsp\Inc\myiic.h ..\USER\Bsp\Inc\mygpio.h \
-  ..\USER\Bsp\Inc\haltick.h
+  ..\USER\Protocol\Inc\myiic.h ..\USER\Protocol\Inc\mygpio.h \
+  ..\USER\Protocol\Inc\haltick.h

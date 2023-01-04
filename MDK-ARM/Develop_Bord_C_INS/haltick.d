@@ -1,5 +1,5 @@
-develop_bord_c_ins/haltick.o: ..\USER\Bsp\Src\haltick.c \
-  ..\USER\Bsp\Inc\haltick.h \
+develop_bord_c_ins/haltick.o: ..\USER\Protocol\Src\haltick.c \
+  ..\USER\Protocol\Inc\haltick.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \

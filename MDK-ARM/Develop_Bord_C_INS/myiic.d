@@ -1,5 +1,5 @@
-develop_bord_c_ins/myiic.o: ..\USER\Bsp\Src\myiic.c \
-  ..\USER\Bsp\Inc\myiic.h \
+develop_bord_c_ins/myiic.o: ..\USER\Protocol\Src\myiic.c \
+  ..\USER\Protocol\Inc\myiic.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \
@@ -34,4 +34,4 @@ develop_bord_c_ins/myiic.o: ..\USER\Bsp\Src\myiic.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\USER\Bsp\Inc\mygpio.h ..\USER\Bsp\Inc\haltick.h
+  ..\USER\Protocol\Inc\mygpio.h ..\USER\Protocol\Inc\haltick.h

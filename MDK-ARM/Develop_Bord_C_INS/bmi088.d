@@ -35,5 +35,5 @@ develop_bord_c_ins/bmi088.o: ..\USER\Device\Src\bmi088.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\USER\Bsp\Inc\haltick.h ..\USER\Bsp\Inc\myspi.h ..\Core\Inc\spi.h \
-  ..\Core\Inc\main.h
+  ..\USER\Protocol\Inc\haltick.h ..\USER\Protocol\Inc\myspi.h \
+  ..\Core\Inc\spi.h ..\Core\Inc\main.h

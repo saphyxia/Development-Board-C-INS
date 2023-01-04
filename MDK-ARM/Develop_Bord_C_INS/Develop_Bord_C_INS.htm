@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Develop_Bord_C_INS\Develop_Bord_C_INS.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Develop_Bord_C_INS\Develop_Bord_C_INS.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Dec 28 21:32:34 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Jan  4 11:11:05 2023
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -97,7 +97,7 @@ Function Pointers
  <LI><a href="#[2e]">SPI2_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[3d]">SPI3_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from port.o(.text.SVC_Handler) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[5e]">StartINSTask</a> from startinstask.o(.text.StartINSTask) referenced from freertos.o(.text.MX_FREERTOS_Init)
+ <LI><a href="#[5e]">StartINSTask</a> from instask.o(.text.StartINSTask) referenced from freertos.o(.text.MX_FREERTOS_Init)
  <LI><a href="#[9]">SysTick_Handler</a> from port.o(.text.SysTick_Handler) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[5b]">SystemInit</a> from system_stm32f4xx.o(.text.SystemInit) referenced from startup_stm32f407xx.o(.text)
  <LI><a href="#[c]">TAMP_STAMP_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
@@ -670,7 +670,7 @@ Global Symbols
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;angle_to_quat
 </UL>
 
-<P><STRONG><a name="[85]"></a>BMI088_init</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, bmi088.o(.text.BMI088_init))
+<P><STRONG><a name="[85]"></a>BMI088_init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, bmi088.o(.text.BMI088_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = BMI088_init &rArr; bmi088_gyro_init &rArr; SPI_ReadWriteByte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
@@ -680,7 +680,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartINSTask
 </UL>
 
-<P><STRONG><a name="[89]"></a>BMI088_read</STRONG> (Thumb, 506 bytes, Stack size 40 bytes, bmi088.o(.text.BMI088_read))
+<P><STRONG><a name="[89]"></a>BMI088_read</STRONG> (Thumb, 446 bytes, Stack size 40 bytes, bmi088.o(.text.BMI088_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = BMI088_read &rArr; BMI088_read_muli_reg &rArr; SPI_ReadWriteByte &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ReadWriteByte
@@ -1355,7 +1355,7 @@ Global Symbols
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, port.o(.text.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[5e]"></a>StartINSTask</STRONG> (Thumb, 1772 bytes, Stack size 24 bytes, startinstask.o(.text.StartINSTask))
+<P><STRONG><a name="[5e]"></a>StartINSTask</STRONG> (Thumb, 1776 bytes, Stack size 24 bytes, instask.o(.text.StartINSTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296 + Unknown Stack Size
 <LI>Call Chain = StartINSTask &rArr; AHRS_update &rArr; accel_comple_filter &rArr; accel_update_kp_ki &rArr; AHRS_invSqrt &rArr; __hardfp_sqrtf &rArr; __set_errno
 </UL>
@@ -2003,7 +2003,7 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[e5]"></a>imu_cali_slove</STRONG> (Thumb, 304 bytes, Stack size 24 bytes, startinstask.o(.text.imu_cali_slove))
+<P><STRONG><a name="[e5]"></a>imu_cali_slove</STRONG> (Thumb, 304 bytes, Stack size 24 bytes, instask.o(.text.imu_cali_slove))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = imu_cali_slove
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartINSTask
